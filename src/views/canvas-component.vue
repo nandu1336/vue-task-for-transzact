@@ -13,19 +13,59 @@
       </thead>
       <tbody>
         <tr v-for="item in pageOfItems" :key="item">
-          <td v-for="attribute in coinAttributes" :key="attribute">
-            {{ item[attribute] }}
+          <td v-for="(attribute, index) in coinAttributes" :key="attribute">
+            <img v-if="index == 2" :src="item[attribute]" />
+            <span v-else>{{ item[attribute] }}</span>
           </td>
         </tr>
       </tbody>
     </table>
-    <div class="columns">
-      <jw-vue-pagination
-        class="column"
-        :items="apiResults"
-        @changePage="onChangePage"
-      ></jw-vue-pagination>
-    </div>
+    <jw-vue-pagination
+      class="column"
+      :items="apiResults"
+      :pageSize="getPageSize"
+      @changePage="onChangePage"
+    ></jw-vue-pagination>
+
+    <ul class="step my-2">
+      <li class="step-item">
+        <a
+          class="text-light bg-dark tooltip"
+          data-tooltip="5"
+          :value="5"
+          @click.prevent="pageSizezChanged(5)"
+        >
+          show 5 rows/page
+        </a>
+      </li>
+      <li class="step-item">
+        <a
+          class="text-light tooltip"
+          data-tooltip="10"
+          :value="10"
+          @click.prevent="pageSizezChanged(10)"
+          >show 10 rows/page</a
+        >
+      </li>
+      <li class="step-item">
+        <a
+          class="text-light tooltip"
+          data-tooltip="15"
+          :value="15"
+          @click.prevent="pageSizezChanged(15)"
+          >show 15 rows/page</a
+        >
+      </li>
+      <li class="step-item">
+        <a
+          class="text-light tooltip"
+          data-tooltip="20"
+          :value="20"
+          @click.prevent="pageSizezChanged(20)"
+          >show 20 rows/page</a
+        >
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -43,10 +83,24 @@ export default {
   },
   data() {
     return {
+      pageSize: 10,
       pageOfItems: [],
     };
   },
+  methods: {
+    pageSizezChanged(e) {
+      console.log("setPageSize is called with value :", e);
+      console.log("type of value  :", typeof e);
+      this.pageSize = e;
+    },
+    onChangePage(changedPages) {
+      this.pageOfItems = changedPages;
+    },
+  },
   computed: {
+    getPageSize: function () {
+      return this.pageSize;
+    },
     isResultsAvailable: function () {
       return this.apiResults.length == 0 ? false : true;
     },
@@ -57,10 +111,12 @@ export default {
       return store.state.apiResults;
     },
   },
-  methods: {
-    onChangePage(changedPages) {
-      this.pageOfItems = changedPages;
-    },
-  },
 };
 </script>
+
+<style scoped>
+img {
+  width: 30px;
+  height: 30px;
+}
+</style>

@@ -66,38 +66,34 @@
     <li class="step-item">
       <a
         class="text-light bg-dark tooltip"
-        data-tooltip="5"
-        :value="5"
-        @click.prevent="pageSizezChanged(5)"
+        data-tooltip="10"
+        @click.prevent="pageSizezChanged(10)"
       >
-        show 5 rows/page
+        show 10 rows/page
       </a>
     </li>
     <li class="step-item">
       <a
         class="text-light tooltip"
-        data-tooltip="10"
-        :value="10"
-        @click.prevent="pageSizezChanged(10)"
-        >show 10 rows/page</a
+        data-tooltip="25"
+        @click.prevent="pageSizezChanged(25)"
+        >show 25 rows/page</a
       >
     </li>
     <li class="step-item">
       <a
         class="text-light tooltip"
-        data-tooltip="15"
-        :value="15"
-        @click.prevent="pageSizezChanged(15)"
-        >show 15 rows/page</a
+        data-tooltip="50"
+        @click.prevent="pageSizezChanged(50)"
+        >show 50 rows/page</a
       >
     </li>
     <li class="step-item">
       <a
         class="text-light tooltip"
-        data-tooltip="20"
-        :value="20"
-        @click.prevent="pageSizezChanged(20)"
-        >show 20 rows/page</a
+        data-tooltip="100"
+        @click.prevent="pageSizezChanged(100)"
+        >show 100 rows/page</a
       >
     </li>
   </ul>

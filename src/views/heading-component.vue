@@ -7,10 +7,16 @@
       </section>
       <section class="navbar-section column col-4 mr-2">
         <div class="input-group input-inline">
-          <input class="form-input" type="text" placeholder="search" />
-          <button class="btn btn-light text-dark input-group-btn">
+          <!-- <input class="form-input" type="text" placeholder="search" /> -->
+          <div class="input-group input-inline">
+            <input type="text" v-model="refreshRate" placeholder="search" />
+            <button class="btn btn-light text-dark input-group-btn">
+              save
+            </button>
+          </div>
+          <!-- <button class="btn btn-light text-dark input-group-btn">
             Search
-          </button>
+          </button> -->
         </div>
       </section>
     </header>

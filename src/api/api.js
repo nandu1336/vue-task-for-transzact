@@ -26,5 +26,5 @@ const response_processor = (coinsList) => {
     store.commit('setApiResults', coniObjects);
 }
 
+setTimeout(() => { get_data(); }, 20 * 1000);
 export default get_data;
-

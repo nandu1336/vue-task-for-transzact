@@ -61,6 +61,46 @@
       >
     </li>
   </ul>
+
+  <ul class="step my-2">
+    <li class="step-item">
+      <a
+        class="text-light bg-dark tooltip"
+        data-tooltip="5"
+        :value="5"
+        @click.prevent="pageSizezChanged(5)"
+      >
+        show 5 rows/page
+      </a>
+    </li>
+    <li class="step-item">
+      <a
+        class="text-light tooltip"
+        data-tooltip="10"
+        :value="10"
+        @click.prevent="pageSizezChanged(10)"
+        >show 10 rows/page</a
+      >
+    </li>
+    <li class="step-item">
+      <a
+        class="text-light tooltip"
+        data-tooltip="15"
+        :value="15"
+        @click.prevent="pageSizezChanged(15)"
+        >show 15 rows/page</a
+      >
+    </li>
+    <li class="step-item">
+      <a
+        class="text-light tooltip"
+        data-tooltip="20"
+        :value="20"
+        @click.prevent="pageSizezChanged(20)"
+        >show 20 rows/page</a
+      >
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -102,10 +142,6 @@ export default {
       type: Number,
       default: 1,
     },
-    pageSize: {
-      type: Number,
-      default: 10,
-    },
     maxPages: {
       type: Number,
       default: 10,
@@ -128,6 +164,7 @@ export default {
       ulStyles: {},
       liStyles: {},
       aStyles: {},
+      pageSize: 10,
     };
   },
   created() {
@@ -147,6 +184,10 @@ export default {
     this.setPage(this.initialPage);
   },
   methods: {
+    pageSizezChanged(changedPageSize) {
+      this.pageSize = changedPageSize;
+      this.setPage(this.initialPage);
+    },
     setPage(page) {
       const { items, pageSize, maxPages } = this;
       // get new pager object for specified page

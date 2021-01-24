@@ -1,17 +1,14 @@
 <template>
-  <heading-component :msg="'Hello world'"></heading-component>
-  <canvas-component></canvas-component>
+  <Home />
 </template>
 
 <script>
-import HeadingComponent from "./views/heading-component.vue";
-import CanvasComponent from "./views/canvas-component.vue";
+import Home from "./views/Home.vue";
 
 export default {
   name: "App",
   components: {
-    HeadingComponent,
-    CanvasComponent,
+    Home,
   },
 };
 </script>

@@ -2,21 +2,28 @@
   <div class="container bg-dark">
     <header class="navbar columns col-10 col-mx-auto py-2">
       <section class="navbar-section column ml-2">
-        <a href="..." class="navbar-brand text-light mr-2">Home</a>
-        <!-- <a href="..." class="btn btn-link text-light">Docs</a> -->
+        <a href="..." class="navbar-brand text-light mr-2"
+          >Total Results:{{ totalResults }}</a
+        >
+      </section>
+      <section class="navbar-section column ml-2">
+        <a href="..." class="navbar-brand text-light mr-2"
+          >Last refresh time: {{ getLastRefreshTime }}</a
+        >
       </section>
       <section class="navbar-section column col-4 mr-2">
         <div class="input-group input-inline">
-          <!-- <input class="form-input" type="text" placeholder="search" /> -->
-          <div class="input-group input-inline">
-            <input type="text" v-model="refreshRate" placeholder="search" />
-            <button class="btn btn-light text-dark input-group-btn">
-              save
-            </button>
-          </div>
-          <!-- <button class="btn btn-light text-dark input-group-btn">
-            Search
-          </button> -->
+          <input
+            type="text"
+            v-model="refreshRate"
+            placeholder="set refresh rate in seconds."
+          />
+          <button
+            class="btn bg-dark text-light input-group-btn"
+            @click="setCustomRefreshRate()"
+          >
+            save
+          </button>
         </div>
       </section>
     </header>
@@ -24,10 +31,30 @@
 </template>
 
 <script>
+import store from "../store/index.js";
+
 export default {
   name: "heading",
   props: {
     msg: String,
+  },
+  data() {
+    return {
+      refreshRate: "",
+    };
+  },
+  methods: {
+    setCustomRefreshRate() {
+      store.commit("setRefreshRate", this.refreshRate);
+    },
+  },
+  computed: {
+    totalResults: function () {
+      return store.state.apiResults.length;
+    },
+    getLastRefreshTime: function () {
+      return store.state.lastRefreshTime;
+    },
   },
 };
 </script>

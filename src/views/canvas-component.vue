@@ -47,7 +47,6 @@ export default {
   name: "canvas",
   components: { JwVuePagination },
   mounted() {
-    console.log("calling get_data in mounted");
     get_data();
   },
   data() {
@@ -67,7 +66,6 @@ export default {
       return dollars + " $";
     },
     getChangePercentage(change) {
-      console.log("change in percentage:", change);
       let dotIndex = change.indexOf(".");
       if (dotIndex != -1) {
         return change.substring(0, dotIndex + 3) + " %";

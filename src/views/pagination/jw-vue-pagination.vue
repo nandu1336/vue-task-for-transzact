@@ -129,6 +129,7 @@ const defaultStyles = {
   },
 };
 export default {
+  emits: ["changePage"],
   props: {
     items: {
       type: Array,

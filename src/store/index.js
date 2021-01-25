@@ -18,6 +18,11 @@ export default createStore({
       state.lastRefreshTime = newRefreshTime;
     }
   },
+  getters: {
+    getRefreshRate(state) {
+      return state.refreshRate;
+    }
+  },
   actions: {},
   modules: {}
 });

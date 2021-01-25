@@ -4,7 +4,7 @@ import store from "../store/index.js";
 const apiKey = "coinranking5b28e3dd48b69de5eed1338b17c63c896ad0ea3d341f007f";
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const apiurl = "https://api.coinranking.com/v2/coins";
-let coniObjects = []
+let coniObjects = [];
 
 const get_data = () => {
     axios.get(proxyurl + apiurl, {

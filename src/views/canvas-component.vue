@@ -31,7 +31,6 @@
       </tbody>
     </table>
     <jw-vue-pagination
-      class="column"
       :items="apiResults"
       @changePage="onChangePage"
     ></jw-vue-pagination>
@@ -44,7 +43,7 @@ import store from "../store/index.js";
 import JwVuePagination from "./pagination/jw-vue-pagination.vue";
 
 export default {
-  name: "canvas",
+  name: "canvas-component",
   components: { JwVuePagination },
   mounted() {
     get_data();

@@ -11,21 +11,6 @@
           >Last refresh time: {{ getLastRefreshTime }}</a
         >
       </section>
-      <section class="navbar-section column col-4 mr-2">
-        <div class="input-group input-inline">
-          <input
-            type="text"
-            v-model="refreshRate"
-            placeholder="set refresh rate in seconds."
-          />
-          <button
-            class="btn bg-dark text-light input-group-btn"
-            @click="setCustomRefreshRate()"
-          >
-            save
-          </button>
-        </div>
-      </section>
     </header>
   </div>
 </template>
@@ -45,6 +30,7 @@ export default {
   },
   methods: {
     setCustomRefreshRate() {
+      console.log("refreshrate set.");
       store.commit("setRefreshRate", this.refreshRate);
     },
   },

@@ -2,6 +2,15 @@
   <div class="container bg-dark">
     <footer class="bg-dark navbar columns col-10 col-mx-auto">
       <section class="navbar-section">
+        <span class="label label-primary">
+          <a
+            href="https://github.com/nandu1336/vue-task-for-transzact"
+            class="btn btn-link text-light"
+            >goto to github repo</a
+          ></span
+        >
+      </section>
+      <section class="navbar-section">
         <span class="label label-primary"
           >CSS Library used:
           <a

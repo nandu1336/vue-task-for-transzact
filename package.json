@@ -9,10 +9,13 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13",
     "spectre.css": "^0.5.9",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
@@ -30,5 +33,17 @@
     "node-sass": "^4.12.0",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2"
-  }
+  },
+  "description": "## Project setup ``` yarn install ```",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nandu1336/vue-task-for-transzact.git"
+  },
+  "author": "Nanda Kishore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nandu1336/vue-task-for-transzact/issues"
+  },
+  "homepage": "https://github.com/nandu1336/vue-task-for-transzact#readme"
 }

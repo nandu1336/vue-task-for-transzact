@@ -3,7 +3,10 @@ const cors = require('cors');
 const path = require('path');
 const app = express();
 app.use(cors());
-const port = 8080;
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 8000;
+}
 const bodyParser = require('body-parser');
 
 app.use(express.static(path.join(__dirname, '/dist')));

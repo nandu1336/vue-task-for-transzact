@@ -2,7 +2,7 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    coinAttributes: ["symbol", "name", "iconUrl", "price", "change"],
+    coinAttributes: ["symbol", "name", "iconUrl", "price", "change", "rank", "marketCap"],
     apiResults: [],
     refreshRate: 5,
     lastRefreshTime: 0

@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     totalResults: function () {
-      return store.state.apiResults.length;
+      return store.state.apiResults["total"];
     },
     getLastRefreshTime: function () {
       return store.state.lastRefreshTime;

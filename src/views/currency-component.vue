@@ -6,7 +6,7 @@
       </div>
       <div class="column col-6">
         <p class="d-inline-block veritcal-close">{{ currencyName }}</p>
-        <p class="text-light d-block veritcal-close">{{ currencySmybol }}</p>
+        <p class="d-block veritcal-close">{{ currencySmybol }}</p>
       </div>
     </div>
   </div>

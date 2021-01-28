@@ -1,13 +1,11 @@
 <template>
-  <div class="container bg-dark">
+  <div class="container">
     <header class="navbar columns col-10 col-mx-auto py-2">
       <section class="navbar-section column ml-2">
-        <a href="..." class="navbar-brand text-light mr-2"
-          >Total Results:{{ totalResults }}</a
-        >
+        <a href="..." class="navbar-brand mr-2">Home{{ totalResults }}</a>
       </section>
       <section class="navbar-section column ml-2">
-        <a href="..." class="navbar-brand text-light mr-2"
+        <a href="..." class="navbar-brand mr-2"
           >Last refresh time: {{ getLastRefreshTime }}</a
         >
       </section>

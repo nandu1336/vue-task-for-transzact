@@ -65,7 +65,7 @@
   <ul class="step my-2">
     <li class="step-item">
       <a
-        class="text-light bg-dark tooltip"
+        class="text-light tooltip"
         data-tooltip="10"
         @click.prevent="pageSizezChanged(10)"
       >

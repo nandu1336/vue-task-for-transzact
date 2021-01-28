@@ -1,6 +1,6 @@
 <template>
-  <div class="container bg-dark">
-    <footer class="bg-dark navbar columns col-10 col-mx-auto">
+  <div class="container">
+    <footer class="navbar columns col-10 col-mx-auto">
       <section class="navbar-section">
         <span class="label label-primary">
           <a

@@ -1,6 +1,6 @@
 
 <template>
-  <div class="container bg-dark columns col-10 col-mx-auto my-2 py-2">
+  <div class="container columns col-10 col-mx-auto my-2 py-2">
     <table v-if="isResultsAvailable" class="table mx-2 my-2 py-2">
       <thead>
         <tr>

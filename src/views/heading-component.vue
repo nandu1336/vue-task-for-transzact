@@ -2,11 +2,13 @@
   <div class="container">
     <header class="navbar columns col-10 col-mx-auto py-2">
       <section class="navbar-section column ml-2">
-        <a href="..." class="navbar-brand mr-2">Home{{ totalResults }}</a>
+        <span class="navbar-brand mr-2"
+          >Total Results:{{ getTotalResults }}</span
+        >
       </section>
       <section class="navbar-section column ml-2">
-        <a href="..." class="navbar-brand mr-2"
-          >Last refresh time: {{ getLastRefreshTime }}</a
+        <span class="navbar-brand mr-2"
+          >Last refresh time: {{ getLastRefreshTime }}</span
         >
       </section>
     </header>
@@ -33,8 +35,8 @@ export default {
     },
   },
   computed: {
-    totalResults: function () {
-      return store.state.apiResults["total"];
+    getTotalResults: function () {
+      return store.state.apiResults.length;
     },
     getLastRefreshTime: function () {
       return store.state.lastRefreshTime;

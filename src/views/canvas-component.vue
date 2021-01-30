@@ -105,4 +105,8 @@ img {
   width: 30px;
   height: 30px;
 }
+
+a {
+  color: #0c2d48;
+}
 </style>

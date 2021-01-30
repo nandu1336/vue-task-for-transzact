@@ -4,8 +4,8 @@ export default createStore({
   state: {
     coinAttributes: ["symbol", "name", "iconUrl", "price", "change", "rank", "marketCap"],
     apiResults: [],
-    refreshRate: 5,
-    lastRefreshTime: 0
+    refreshRate: 30,
+    lastRefreshTime: new Date().toLocaleTimeString().split("(")[0]
   },
   mutations: {
     setApiResults(state, results) {

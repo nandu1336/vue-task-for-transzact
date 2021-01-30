@@ -1,10 +1,18 @@
 <template>
-  <div class="container">
+  <div class="container bg-dark">
     <header class="navbar columns col-10 col-mx-auto py-2">
       <section class="navbar-section column ml-2">
         <span class="navbar-brand mr-2"
           >Total Results:{{ getTotalResults }}</span
         >
+      </section>
+      <section class="navbar-section column ml-2">
+        <input
+          type="text"
+          placeholder="search by currency name"
+          class="form-input navbar-brand mr-2"
+          v-model="searchInput"
+        />
       </section>
       <section class="navbar-section column ml-2">
         <span class="navbar-brand mr-2"
@@ -26,6 +34,7 @@ export default {
   data() {
     return {
       refreshRate: "",
+      searchInput: "",
     };
   },
   methods: {
@@ -40,6 +49,19 @@ export default {
     },
     getLastRefreshTime: function () {
       return store.state.lastRefreshTime;
+    },
+  },
+  watch: {
+    searchInput: function () {
+      if (this.searchInput == "") {
+        return store.commit("setApiDefaultState");
+      }
+      let temp = store.state.__apiResults.filter((currency) => {
+        let name = currency.name.toLowerCase();
+        let value = this.searchInput.toLowerCase();
+        return name.startsWith(value);
+      });
+      store.commit("setApiResults", temp);
     },
   },
 };

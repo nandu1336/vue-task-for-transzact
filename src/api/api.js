@@ -22,12 +22,12 @@ const response_processor = (coinsList) => {
         });
         coniObjects.push(temp);
     })
-    store.commit('setApiResults', coniObjects);
+    store.commit('__setApiResults', coniObjects);
 }
 
 
 export default get_data;
-window.setInterval(() => {
-    get_data();
-    store.commit('setLastRefreshTime', new Date().toLocaleTimeString().split("(")[0]);
-}, store.state.refreshRate * 1000);
+// window.setInterval(() => {
+//     get_data();
+//     store.commit('setLastRefreshTime', new Date().toLocaleTimeString().split("(")[0]);
+// }, store.state.refreshRate * 1000);

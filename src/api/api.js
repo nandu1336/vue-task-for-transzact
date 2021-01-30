@@ -2,12 +2,12 @@ import axios from "axios";
 import store from "../store/index.js";
 
 const apiKey = "coinranking8ca85afe2cff95368f950772b2005d389702d60a30188905";
-// const proxyurl = "https://cors-anywhere.herokuapp.com/";
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const apiurl = "https://api.coinranking.com/v2/coins";
 let coniObjects = [];
 
 const get_data = () => {
-    axios.get(apiurl, {
+    axios.get(proxyurl + apiurl, {
         headers: { 'x-access-token': apiKey }
     }).then(res => {
         response_processor(res.data.data.coins)

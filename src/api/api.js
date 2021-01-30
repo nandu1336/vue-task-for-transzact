@@ -22,7 +22,7 @@ const response_processor = (coinsList) => {
         });
         coniObjects.push(temp);
     })
-    store.commit('setApiResults', coniObjects);
+    store.commit('__setApiResults', coniObjects);
 }
 
 

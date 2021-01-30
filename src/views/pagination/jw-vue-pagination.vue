@@ -1,7 +1,7 @@
 <template>
   <ul
     v-if="pager.pages && pager.pages.length"
-    class="pagination"
+    class="pagination container my-2"
     :style="ulStyles"
   >
     <li
@@ -62,41 +62,43 @@
     </li>
   </ul>
 
-  <ul class="step my-2">
-    <li class="step-item">
-      <a
-        class="text-light bg-dark tooltip"
-        data-tooltip="10"
-        @click.prevent="pageSizezChanged(10)"
-      >
-        show 10 rows/page
-      </a>
-    </li>
-    <li class="step-item">
-      <a
-        class="text-light tooltip"
-        data-tooltip="25"
-        @click.prevent="pageSizezChanged(25)"
-        >show 25 rows/page</a
-      >
-    </li>
-    <li class="step-item">
-      <a
-        class="text-light tooltip"
-        data-tooltip="50"
-        @click.prevent="pageSizezChanged(50)"
-        >show 50 rows/page</a
-      >
-    </li>
-    <li class="step-item">
-      <a
-        class="text-light tooltip"
-        data-tooltip="100"
-        @click.prevent="pageSizezChanged(100)"
-        >show 100 rows/page</a
-      >
-    </li>
-  </ul>
+  <div id="steps" class="container">
+    <ul class="step my-2">
+      <li class="step-item">
+        <a
+          class="text-dark tooltip"
+          data-tooltip="10"
+          @click.prevent="pageSizezChanged(10)"
+        >
+          show 10 rows/page
+        </a>
+      </li>
+      <li class="step-item">
+        <a
+          class="text-dark tooltip"
+          data-tooltip="25"
+          @click.prevent="pageSizezChanged(25)"
+          >show 25 rows/page</a
+        >
+      </li>
+      <li class="step-item">
+        <a
+          class="text-dark tooltip"
+          data-tooltip="50"
+          @click.prevent="pageSizezChanged(50)"
+          >show 50 rows/page</a
+        >
+      </li>
+      <li class="step-item">
+        <a
+          class="text-dark tooltip"
+          data-tooltip="100"
+          @click.prevent="pageSizezChanged(100)"
+          >show 100 rows/page</a
+        >
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -115,13 +117,11 @@ const defaultStyles = {
     display: "inline-block",
   },
   li: {
-    color: "white",
     listStyle: "none",
     display: "inline",
     textAlign: "center",
   },
   a: {
-    color: "white",
     cursor: "pointer",
     padding: "6px 12px",
     display: "inline",
@@ -205,3 +205,8 @@ export default {
 };
 </script>
 
+<style scoped>
+#steps {
+  margin-top: 40px;
+}
+</style>

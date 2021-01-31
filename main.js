@@ -1,15 +1,10 @@
 const express = require('express')
 const cors = require('cors')
 const path = require('path')
-// const bodyParser = require('body-parser');
 
 const app = express()
 app.use(cors())
-
 app.use(express.static(path.join(__dirname, '/dist')));
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
-
 
 let port = process.env.PORT;
 if (port == null || port == "") {

@@ -7,7 +7,6 @@ let coinAttributes = ["symbol", "name", "iconUrl", "price", "change", "rank", "m
 
 const get_data = () => {
     return new Promise((resolve, reject) => {
-        console.log("get_data in api.js is called");
         axios.get(apiurl, {
             headers: { 'x-access-token': apiKey }
         }).then(res => {
@@ -23,6 +22,7 @@ const get_data = () => {
 }
 
 const response_processor = (coinsList) => {
+    coniObjects = [];
     coinsList.map((coin) => {
         let temp = {}
         coinAttributes.map((attribute) => {
